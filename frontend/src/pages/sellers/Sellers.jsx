@@ -15,7 +15,7 @@ const Sellers = () => {
 
         {/* Main Start */}
         <main className='main-container'>
-          <SellFilters />
+        < SellFilters />
         </main>
         {/* Main End*/}
 
