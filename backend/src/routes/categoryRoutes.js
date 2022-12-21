@@ -1,12 +1,9 @@
-import express from "express";
-import Category from "../models/categoryModel.js";
+import { Router } from "express";
+import * as categoryController from "../controllers/categoryController.js";
 
-const CategoryRouter = express.Router();
+const router = Router();
 
-//for fetch or get category from db
-CategoryRouter.get("/", async (req, res) => {
-  const category = await Category.find();
-  res.send(category);
-});
+//for fetch or get category from db --- PULL CATEGORY
+router.get("/", categoryController.getCategories);
 
-export default CategoryRouter;
+export default router;
