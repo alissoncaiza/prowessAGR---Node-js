@@ -17,8 +17,7 @@ export default function SellFilters() {
         <span>review</span>
       </h1>
       <div className="reviews-slider">
-        <Swiper
-        >
+        <Swiper>
           
             <div className="box">
               <img src="../assets/images/sellers/Empresa1.jpg" alt="" />
@@ -35,8 +34,8 @@ export default function SellFilters() {
               </div>
             </div>
           
-         
-            <div className="box">
+         <div className="contenedor">
+            <div className="box1">
               <img src="image/pic-2.png" alt="" />
               <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis
@@ -52,7 +51,7 @@ export default function SellFilters() {
               </div>
             </div>
          
-            <div className="box">
+            <div className="box2">
               <img src="image/pic-3.png" alt="" />
               <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis
@@ -70,7 +69,7 @@ export default function SellFilters() {
               </div>
             </div>
           
-            <div className="box">
+            <div className="box3">
               <img src="image/pic-4.png" alt="" />
               <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis
@@ -88,7 +87,7 @@ export default function SellFilters() {
               </div>
             </div>
 
-            <div className="box">
+            <div className="box4">
               <img src="image/pic-4.png" alt="" />
               <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis
@@ -106,7 +105,7 @@ export default function SellFilters() {
               </div>
             </div>
 
-            <div className="box">
+            <div className="box5">
               <img src="image/pic-4.png" alt="" />
               <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis
@@ -121,6 +120,7 @@ export default function SellFilters() {
                 <FontAwesomeIcon icon={faStar} />
                 <FontAwesomeIcon icon={faStar} />
                 <FontAwesomeIcon icon={faStarHalfAlt} />
+              </div>
               </div>
             </div>
           

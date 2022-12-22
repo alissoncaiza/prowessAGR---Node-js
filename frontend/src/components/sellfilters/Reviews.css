@@ -1,3 +1,6 @@
+.box{
+  margin-top: 3rem;
+}
 .reviews .reviews-slider .box{
     background: #62CF9D;
     border-radius: 3rem;
@@ -12,7 +15,7 @@
     outline: var(--outline-hover);
   }
   .reviews .reviews-slider .box img{
-    height: 10rem;
+    height: 8rem;
     width: 10rem;
     border-radius: 50%;
   }
@@ -30,4 +33,21 @@
   .reviews .reviews-slider .box .stars{
     color: var(--orange);
     font-size: 1.7rem;
+  }
+
+  .contenedor{
+    width: 90%;
+    max-width: 1000px;
+    margin: 70px, auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contenedor > div {
+    margin-top: 2rem;
+    background-color: #62CF9D;
+    padding: 20px;
+    border-radius: 3rem;
+    border: solid black;
   }
