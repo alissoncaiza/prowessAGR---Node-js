@@ -35,9 +35,8 @@ export const getMyOrders = async (req, res) => {
 
 //Get order
 export const getOrder = async (req, res) => {
-  const { id } = req.params;
   try {
-    const order = await Order.find(id);
+    const order = await Order.find({});
     res.send(order);
   } catch (error) {
     res.status(404).send({ message: "Orden no encontrada" });
@@ -46,7 +45,7 @@ export const getOrder = async (req, res) => {
 
 //Get orders by id
 export const getOrders = async (req, res) => {
-  const { id } = req.params;
+  const id = req.params.id;
   try {
     const orders = await Order.findById(id);
     res.send(orders);
