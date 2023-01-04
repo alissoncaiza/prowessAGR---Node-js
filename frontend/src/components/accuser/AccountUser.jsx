@@ -40,11 +40,11 @@ const AccountUser = () => {
 
         const fetchData = async () => {
             try {
-              const res = await axios.get(`/api/products/seller/${id}`);
+              const res = await axios.get(`/src/api/products/seller/${id}`);
               console.log(res.data);
               setProduct(res.data)
 
-              const result = await axios.get(`/api/orders/mine/${id}`);
+              const result = await axios.get(`/src/api/orders/mine/${id}`);
               console.log(result.data);
               setOrders(result.data)
       
@@ -60,7 +60,7 @@ const AccountUser = () => {
 
         try {
 
-            const {data} = await axios.put("/api/users/update", {
+            const {data} = await axios.put("/src/api/users/update", {
                 _id: userInfo._id,
                 name,
                 email,
@@ -122,7 +122,7 @@ const AccountUser = () => {
         const url = await uploadImage(image);
         console.log(url);
 
-        const {data} = await axios.put("/api/users/update", {
+        const {data} = await axios.put("/src/api/users/update", {
             _id: userInfo._id,
             image: url
         });

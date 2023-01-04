@@ -1,131 +1,61 @@
-import React from 'react';
-import { Swiper } from 'swiper/react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons';
-import SwiperCore, { Autoplay } from 'swiper';
-import './Reviews.css';
-import 'swiper/swiper.min.css';
+import axios from 'axios'
+import React, { useEffect, useState } from 'react'
+import SellFilter from './SellFilter'
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 
-export default function SellFilters() {
-  SwiperCore.use([Autoplay]);
+const SellFilters = () => {
+
+    
+    const [seller, setSeller] = useState([]);
+    const [query, setQuery] = useState("");
+
+    useEffect(() => {
+
+        const fetchData = async () => {
+
+            const result = await axios.get("/api/users/all");
+            console.log(result.data);
+            setSeller(result.data);
+        }
+
+        fetchData();
+
+    }, []);
+
+    //search
+    const keys = ["name", "email", "address"];
+
+    const search = () => {
+        return seller.filter((item) => keys.some((key) => item[key].toLowerCase().includes(query)));
+    };
+
   return (
+    <div className='sell-fill-row'>
+        {seller.length === 0 ? (<div className='ctn-products'>
+            <h3 className='info'>Actualmente no hay vendedores! 😓</h3>
+            <img src="./assets/images/illustrations/no-data.svg" alt="" />
+        </div>) : (
+            <>
+            
+                <div className="sell-fill-col">
+                    <input type="search" placeholder='Buscar...' onChange={(e) => setQuery(e.target.value)} />
+                </div>
+                <div className="sell-fill-col">
+                    <SellFilter seller={search(SellFilter)} />
+                </div>
+            
+            </>
+        )}
+      
 
-    <section className="reviews" id="reviews">
-      <h1 className="heading">
-        customer&apos;s
-        {' '}
-        <span>review</span>
-      </h1>
-      <div className="reviews-slider">
-        <Swiper>
-          
-            <div className="box">
-              <img src="../assets/images/sellers/Empresa1.jpg" alt="" />
-              <p>
-              Somos una empresa 100% ecuatoriana con un enfoque sustentable y sostenible para el bienestar de la comunidad agrícola, ofrecemos productos orgánicos y asesoramiento técnico para el campo.
-              </p>
-              <h3>Empresa 1</h3>
-              <div className="stars">
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStarHalfAlt} />
-              </div>
-            </div>
-          
-         <div className="contenedor">
-            <div className="box1">
-              <img src="image/pic-2.png" alt="" />
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis
-                maxime inventore illo nemo cupiditate quam eligendi nihil sunt
-                ullam, laudantium, earum in nam provident quaerat
-                exercitationem?
-              </p>
-              <h3>Empresa 2</h3>
-              <div className="stars">
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-              </div>
-            </div>
-         
-            <div className="box2">
-              <img src="image/pic-3.png" alt="" />
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis
-                maxime inventore illo nemo cupiditate quam eligendi nihil sunt
-                ullam, laudantium, earum in nam provident quaerat
-                exercitationem?
-              </p>
-              <h3>Empresa 3</h3>
-              <div className="stars">
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStarHalfAlt} />
-              </div>
-            </div>
-          
-            <div className="box3">
-              <img src="image/pic-4.png" alt="" />
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis
-                maxime inventore illo nemo cupiditate quam eligendi nihil sunt
-                ullam, laudantium, earum in nam provident quaerat
-                exercitationem?
-              </p>
-              <h3>Empresa 4</h3>
-              <div className="stars">
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStarHalfAlt} />
-              </div>
-            </div>
-
-            <div className="box4">
-              <img src="image/pic-4.png" alt="" />
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis
-                maxime inventore illo nemo cupiditate quam eligendi nihil sunt
-                ullam, laudantium, earum in nam provident quaerat
-                exercitationem?
-              </p>
-              <h3>Empresa 5</h3>
-              <div className="stars">
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStarHalfAlt} />
-              </div>
-            </div>
-
-            <div className="box5">
-              <img src="image/pic-4.png" alt="" />
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Omnis
-                maxime inventore illo nemo cupiditate quam eligendi nihil sunt
-                ullam, laudantium, earum in nam provident quaerat
-                exercitationem?
-              </p>
-              <h3>Empresa 6</h3>
-              <div className="stars">
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStarHalfAlt} />
-              </div>
-              </div>
-            </div>
-          
-        </Swiper>
-      </div>
-    </section>
-  );
+    </div>
+       
+  )
 }
+
+export default SellFilters
