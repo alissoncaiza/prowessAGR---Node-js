@@ -1,4 +1,5 @@
 import app from "./app.js";
+import "./database/cloudinary.js";
 import "./database/databaseConnection.js";
 
 // Start the server

@@ -4,7 +4,7 @@ import * as orderController from "../controllers/orderController.js";
 const router = Router();
 
 router.post("/", orderController.postOrder);
-router.get("/", orderController.getOrders);
+router.get("/userorders/:id", orderController.getOrders);
 router.get("/:id", orderController.getOrder);
 router.get("/mine/:id", orderController.getMyOrders);
 
