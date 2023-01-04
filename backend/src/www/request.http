@@ -1,2 +1,11 @@
 ###
-GET http://localhost:5000/api/orders/userorders/63a23ce367ba697048202d0d HTTP/1.1
+GET http://localhost:5000/api/users/all HTTP/1.1
+
+###
+POST http://localhost:5000/api/users/all HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "John Doe",
+    "email": ""
+}
