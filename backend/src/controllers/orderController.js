@@ -27,7 +27,7 @@ export const postOrder = async (req, res) => {
 export const getMyOrders = async (req, res) => {
   try {
     const orders = await Order.find({ sellerId: req.params.id });
-    res.send(orders);
+    res.status(200).send(orders);
   } catch (error) {
     res.status(404).send({ message: "No existen ordenes" });
   }

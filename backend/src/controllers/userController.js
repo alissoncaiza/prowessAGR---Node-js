@@ -60,7 +60,7 @@ export const getUser = async (req, res) => {
 export const getUserById = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
-    res.status(200).res.send(user);
+    res.status(200).send(user);
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
