@@ -4,6 +4,8 @@ import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Store } from '../../Store'
 import Card from '@mui/material/Card';
+import { Button, CardActionArea} from '@mui/material';
+import { Swiper } from 'swiper/react';
 
 const SellFilterInfo = ({user}) => {
 
@@ -52,18 +54,22 @@ const SellFilterInfo = ({user}) => {
     }
 
   return (
+    <Swiper>
     <Card sx={{ maxWidth: 345 }}>
+    <CardActionArea>
     <div className="sell-fill-group" key={user._id}>
         <div className="sell-fill-header">
             <img src={user.image} alt={user.name} />
         </div>
         <div className="sell-fill-body">
             <Link to={`../seller/${user._id}`}>{user.name} <FontAwesomeIcon icon={faEye} /></Link>
-            {existUser && sellerExists ? (<span onClick={() => handlerUnfollow(user)} className='unfollow'>Dejar de seguir</span>) : (<span key={user._id} onClick={handlerFollow} className='follow'>Seguir</span>)}
+            {existUser && sellerExists ? ( <Button variant="contained" color="error" size="medium"><span onClick={() => handlerUnfollow(user)}>Dejar de seguir</span></Button>) : (<Button variant="contained" size="medium" color="success"><span key={user._id} onClick={handlerFollow}>Seguir</span></Button>)}
             <span className="date">Miembro Desde: {(user.createdAt).slice(0, 10)}</span>
         </div>
     </div>
+    </CardActionArea>
     </Card>
+    </Swiper>
   )
 }
 
