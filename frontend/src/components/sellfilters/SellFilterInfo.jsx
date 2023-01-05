@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Store } from '../../Store'
+import Card from '@mui/material/Card';
 
 const SellFilterInfo = ({user}) => {
 
@@ -51,6 +52,7 @@ const SellFilterInfo = ({user}) => {
     }
 
   return (
+    <Card sx={{ maxWidth: 345 }}>
     <div className="sell-fill-group" key={user._id}>
         <div className="sell-fill-header">
             <img src={user.image} alt={user.name} />
@@ -61,6 +63,7 @@ const SellFilterInfo = ({user}) => {
             <span className="date">Miembro Desde: {(user.createdAt).slice(0, 10)}</span>
         </div>
     </div>
+    </Card>
   )
 }
 
