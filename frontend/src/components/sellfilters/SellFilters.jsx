@@ -30,7 +30,10 @@ const SellFilters = () => {
 
   return (
     <div className='sell-fill-row'>
-        {seller.length === 0 ? (<h3 className='info'>Actualmente no hay vendedores registrados!</h3>) : (
+        {seller.length === 0 ? (<div className='ctn-products'>
+            <h3 className='info'>Actualmente no hay vendedores! 😓</h3>
+            <img src="./assets/images/illustrations/no-data.svg" alt="" />
+        </div>) : (
             <>
             
                 <div className="sell-fill-col">
