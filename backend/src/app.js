@@ -1,8 +1,8 @@
 import express from "express";
 import morgan from "morgan";
+import cors from "cors";
 import seedRouter from "./routes/seedRoutes.js";
 import CategoryRouter from "./routes/categoryRoutes.js";
-import cors from "cors";
 import ProductRouter from "./routes/productRoutes.js";
 import UserRouter from "./routes/userRoutes.js";
 import OrderRouter from "./routes/orderRoutes.js";
@@ -13,6 +13,7 @@ const app = express();
 app.use(cors());
 app.use(morgan("dev"));
 app.use(express.json());
+app.use(express.static('uploads'));
 app.use(express.urlencoded({ extended: true }));
 
 //routers
