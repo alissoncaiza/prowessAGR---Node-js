@@ -15,6 +15,15 @@ export const fileUpload = async (req, res, next) => {
 
 //CREATE PRODUCT
 export const postProduct = async (req, res) => {
+  if (
+    (!req.body.name,
+    !req.body.slug,
+    !req.body.category,
+    !req.body.description,
+    !req.body.price)
+  ) {
+    return res.status(400).send({ message: "Product data is required" });
+  }
   const newProduct = new Products(req.body);
   try {
     if (req.file && req.file.filename) {
