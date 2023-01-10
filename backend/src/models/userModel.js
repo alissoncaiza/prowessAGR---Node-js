@@ -14,6 +14,7 @@ const UserSchema = new mongoose.Schema(
   },
   {
     timestamps: true, //for date
+    versionKey: false, //for version
   }
 );
 UserSchema.methods.encrypPassword = async (password) => {

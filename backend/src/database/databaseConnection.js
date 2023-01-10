@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import cloudinary from "cloudinary";
 import dotenv from "dotenv";
 
 // Connect to MongoDB
