@@ -38,6 +38,7 @@ const OrderSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
+    versionKey: false, //for version
   }
 );
 

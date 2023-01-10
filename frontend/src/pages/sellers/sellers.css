@@ -117,3 +117,20 @@
 .sell-fill-row .sell-fill-col .filter-pagination {
     margin: 80px 0 50px 0;
 }
+
+.background-sellers {
+    color:lightgreen;
+    background: linear-gradient(45deg,  green, rgb(237, 183, 85)
+, orange);
+    opacity: 1;
+    animation-name: cambiar;
+    animation-duration: 5s ease infinite;
+
+    
+}
+
+@keyframes cambiar {
+    0%{background-position: 0 50%;}
+    50%{background-position: 100% 50%;}
+    100%{background-position: 0 50%;}
+}
