@@ -52,8 +52,16 @@
 
 .sell-fill-group {
     width: 250px;
+    background-color: rgb(200, 235, 203);
+    transition: all 2s linear;
+    border-top-right-radius: 50px;
+    border: double 10px;
 }
 
+.sell-fill-group:hover {
+    background-color: white;
+    transform-origin: right;
+}
 .sell-fill-header {
     height: 130px;
     display: grid;
