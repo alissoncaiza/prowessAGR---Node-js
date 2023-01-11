@@ -6,7 +6,9 @@ import './sellers.css'
 
 const Sellers = () => {
   return (
+  
     <div className="wrapper">
+       
         {/* Header Start */}
         <header className='header-container'>
           <Header />
@@ -14,9 +16,9 @@ const Sellers = () => {
         {/* Header End */}
 
         {/* Main Start */}
-        <main className='main-container'>
+        <div className="background-sellers"> 
         < SellFilters />
-        </main>
+        </div>
         {/* Main End*/}
 
         {/* Footer Start */}
@@ -24,6 +26,7 @@ const Sellers = () => {
           <Footer />
         </footer>
         {/* Footer End*/}
+           
     </div>
   )
 }
