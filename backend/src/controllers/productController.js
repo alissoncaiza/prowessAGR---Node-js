@@ -1,17 +1,6 @@
 import Products from "../models/productModel.js";
-import multer from "multer";
-import multerConfig from "../utils/multerConfig.js";
-
-const upload = multer(multerConfig).single("image");
-
-export const fileUpload = async (req, res, next) => {
-  upload(req, res, async (error) => {
-    if (error) {
-      res.json({ message: error });
-    }
-    return next();
-  });
-};
+import { uploadImage, deleteImage } from "../utils/cloudinaryConfig.js";
+import fs from "fs-extra";
 
 //CREATE PRODUCT
 export const postProduct = async (req, res) => {
@@ -24,15 +13,20 @@ export const postProduct = async (req, res) => {
   ) {
     return res.status(400).send({ message: "Product data is required" });
   }
-  const newProduct = new Products(req.body);
   try {
-    if (req.file && req.file.filename) {
-      newProduct.image = req.file.filename;
+    const newProduct = new Products(req.body);
+    if (req.files?.image) {
+      const result = await uploadImage(req.files.image.tempFilePath);
+      newProduct.image = {
+        public_id: result.public_id,
+        secure_url: result.secure_url,
+      };
+      await fs.unlink(req.files.image.tempFilePath);
     }
     const savedProduct = await newProduct.save();
-    res.status(200).json(savedProduct);
+    return res.status(200).json(savedProduct);
   } catch (error) {
-    res.status(500).json(error);
+    return res.status(500).json(error);
   }
 };
 
@@ -40,9 +34,9 @@ export const postProduct = async (req, res) => {
 export const getProducts = async (req, res) => {
   try {
     const products = await Products.find();
-    res.status(200).json(products);
+    return res.status(200).json(products);
   } catch (error) {
-    res.status(500).json(error);
+    return res.status(500).json(error);
   }
 };
 
@@ -50,9 +44,9 @@ export const getProducts = async (req, res) => {
 export const getProductById = async (req, res) => {
   try {
     const product = await Products.findById(req.params.id);
-    res.status(200).json(product);
+    return res.status(200).json(product);
   } catch (error) {
-    res.status(500).json(error);
+    return res.status(500).json(error);
   }
 };
 
@@ -60,39 +54,36 @@ export const getProductById = async (req, res) => {
 export const getProductBySlug = async (req, res) => {
   try {
     const product = await Products.findOne({ slug: req.params.slug });
-    res.status(200).json(product);
+    return res.status(200).json(product);
   } catch (error) {
-    res.status(500).json(error);
+    return res.status(500).json(error);
   }
 };
 
 //UPDATE PRODUCT
 export const updateProduct = async (req, res) => {
   try {
-    let newProduct = req.body;
-    if (req.file && req.file.filename) {
-      newProduct.image = req.file.filename;
-    } else {
-      const product = await Products.findById(req.params.id);
-      newProduct.image = product.image;
-    }
+    const newProduct = req.body;
     await Products.findOneAndUpdate({ _id: req.params.id }, newProduct, {
       new: true,
     });
   } catch (error) {
-    res.status(500).json(error);
+    return res.status(500).json(error);
   }
 };
 
 //DELETE PRODUCT
 export const deleteProduct = async (req, res) => {
   try {
-    const product = await Products.findById(req.params.id);
-    if (product) {
-      await product.remove();
-      res.status(200).json({ message: "Product deleted" });
+    const product = await Products.findByIdAndDelete(req.params.id);
+    if (!product)
+      return res.status(404).json({ message: "Product does not exits" });
+
+    if (product.image?.public_id) {
+      await deleteImage(product.image.public_id);
     }
+    return res.status(200).json({ message: "Product deleted" });
   } catch (error) {
-    res.status(500).json(error);
+    return res.status(500).json(error);
   }
 };
