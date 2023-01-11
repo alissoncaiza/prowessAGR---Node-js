@@ -41,13 +41,8 @@ const AddProduct = ({setOpenAdd}) => {
 
             setUploadingImageProduct(true);
             let res = await fetch(`https://api.cloudinary.com/v1_1/primalappsje/resources/image`, {
-
                 method: "POST",
                 body: dataProduct,
-                headers:{
-                    Authorization: `Basic ${Buffer.from(process.env.API_KEY +':'+ process.env.API_SECRET).toString('base64')}`
-                }
-
             });
             const urlDataProduct = await res.json();
             setUploadingImageProduct(false);
