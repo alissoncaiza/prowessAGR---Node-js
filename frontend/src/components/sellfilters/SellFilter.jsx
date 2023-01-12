@@ -23,9 +23,10 @@ const SellFilter = ({seller}) => {
                 <SellFilterInfo key={user._id} user={user} />
             ))}
         </div>
+
         <ReactPaginate className='filter-pagination' 
-            previousLabel={"Ant"}
-            nextLabel={"Sig"}
+            previousLabel={"← Ant"}
+            nextLabel={"Sig →"}
             breakLabel={"..."}
             pageCount={pageCount}
             marginPagesDisplayed={2}

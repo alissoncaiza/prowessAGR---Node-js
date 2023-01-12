@@ -1,28 +1,9 @@
 .filter-row {
-    padding: 50px 0;
+    padding: 50px 15px;
     height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.ctn-products {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.ctn-products h3 {
-    width: 100%;
-    padding: 30px;
-}
-
-.ctn-products img {
-    width: 200px;
-    height: auto;
 }
 
 .filter-row .filter-col:first-child {

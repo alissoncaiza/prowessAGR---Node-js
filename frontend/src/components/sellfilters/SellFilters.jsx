@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import SellFilter from './SellFilter'
+import SellFilter from './SellFilter';
+import "./Cards.css";
 
 const SellFilters = () => {
 
@@ -37,7 +38,9 @@ const SellFilters = () => {
             <>
             
                 <div className="sell-fill-col">
-                    <input type="search" placeholder='Buscar...' onChange={(e) => setQuery(e.target.value)} />
+                    <div className="Buscador">
+                    <input type="search" placeholder='Buscar...' onChange={(e) => setQuery(e.target.value)} id= "Buscador"/>
+                    </div>
                 </div>
                 <div className="sell-fill-col">
                     <SellFilter seller={search(SellFilter)} />
@@ -45,8 +48,10 @@ const SellFilters = () => {
             
             </>
         )}
-        
+      
+
     </div>
+       
   )
 }
 

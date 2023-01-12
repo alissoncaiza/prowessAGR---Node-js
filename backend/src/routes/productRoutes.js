@@ -1,0 +1,21 @@
+import { Router } from "express";
+import fileUpload from "express-fileupload";
+import * as productController from "../controllers/productController.js";
+
+const router = Router();
+
+router.get("/seller/:id", productController.getProductById);
+router.post(
+  "/add",
+  fileUpload({
+    useTempFiles: true,
+    tempFileDir: "./src/uploads",
+  }),
+  productController.postProduct
+);
+router.get("/", productController.getProducts);
+router.get("/slug/:slug", productController.getProductBySlug);
+router.put("/update/:id", productController.updateProduct);
+router.delete("/delete/:id", productController.deleteProduct);
+
+export default router;

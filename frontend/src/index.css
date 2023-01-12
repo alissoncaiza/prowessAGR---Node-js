@@ -1,5 +1,5 @@
 /* Default Settings Start */
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap');
 
 * {
   margin: 0;
@@ -14,11 +14,10 @@
 html,
 body {
   overflow-x: hidden;
-  font-family: 'Krona One', sans-serif;
 }
 
 body {
-  font-family: myFont;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .wrapper {

@@ -1,6 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import './App.css';
-import EE from './components/accuser/UsersDefault';
 import Order from './components/accuser/Order';
 import UserInfoOrder from './components/accuser/UserInfoOrder';
 import Account from './pages/account/Account';
@@ -15,7 +14,6 @@ import Sellers from './pages/sellers/Sellers';
 import Shop from './pages/shop/Shop';
 
 function App() {
-  EE();
   return (
     <>
       <Router>

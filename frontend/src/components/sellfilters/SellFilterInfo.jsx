@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Store } from '../../Store'
+import "./Cards.css";
 
 const SellFilterInfo = ({user}) => {
 
@@ -51,16 +52,19 @@ const SellFilterInfo = ({user}) => {
     }
 
   return (
+        
     <div className="sell-fill-group" key={user._id}>
         <div className="sell-fill-header">
             <img src={user.image} alt={user.name} />
         </div>
         <div className="sell-fill-body">
-            <Link to={`../seller/${user._id}`}>{user.name} <FontAwesomeIcon icon={faEye} /></Link>
+            
+        <Link to={`../seller/${user._id}`}>{user.name} <FontAwesomeIcon icon={faEye} /></Link>
             {existUser && sellerExists ? (<span onClick={() => handlerUnfollow(user)} className='unfollow'>Dejar de seguir</span>) : (<span key={user._id} onClick={handlerFollow} className='follow'>Seguir</span>)}
             <span className="date">Miembro Desde: {(user.createdAt).slice(0, 10)}</span>
         </div>
     </div>
+    
   )
 }
 
