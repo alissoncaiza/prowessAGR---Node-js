@@ -12,3 +12,7 @@
     border-radius: 10px;
     border-color: black;
 }
+
+#Buscador:hover {
+    width: 1200px;
+}

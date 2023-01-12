@@ -61,9 +61,9 @@
 
 .sell-fill-group:hover {
     background-color: rgb(223, 246, 228);
-    transform-origin: right;
-    transform: scale(1.05);
-    transition-duration: 0.5s;
+    transform-origin: bottom;
+    transform: scale(1.02);
+    transition-duration: 0.2s, 0.2s;
 }
 .sell-fill-header {
     height: 130px;
@@ -139,10 +139,7 @@
     background-color: #f4e8b7;
     background-size: 400% 400%;
     position: relative;
-    animation: example 10s ease-in-out infinite;
-    
-
-    
+    animation: example 10s ease-in-out infinite;    
 }
 
 

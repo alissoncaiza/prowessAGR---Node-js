@@ -94,7 +94,7 @@
 }
 
 .pagi-item {
-    border: 0.5px solid #485b63;
+    border: 3px solid #030303;
     padding: 5px;
 }
 
@@ -117,17 +117,18 @@
 }
 
 .disabledPagi {
-    background-color: #e2e2e2;
+    background-color: #ffffff;
 }
 
 .disabledPagi .pagi-link {
-    color: #818181;
+    color: #050505;
 }
 
 .disabledPagi:hover {
-    background-color: #e2e2e2;
+    transform: scale(1.1);
+    background-color: #b7c4ab;
 }
 
 .disabledPagi:hover .pagi-link {
-    color: #818181;
+    color: #fdfdfd;
 }
