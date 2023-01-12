@@ -7,7 +7,11 @@
   "scripts": {
     "dev": "nodemon src/index.js --exec babel-node",
     "build": "babel src --out-dir src",
+<<<<<<< HEAD
     "start": "nodemon src/index.js"
+=======
+    "start": "node src/index.js"
+>>>>>>> f44f048af85f6b2d8ac78d8f20c8ff5b015e06cb
   },
   "author": "",
   "license": "ISC",
