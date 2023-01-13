@@ -60,22 +60,15 @@ const SellFilterInfo = ({user}) => {
             <img href={user.image} alt={user.name} /></h2>
    
         <p> 
-        
-        Miembro Desde: {(user.createdAt).slice(0, 10)}
-           
-           
+        Miembro Desde: {(user.createdAt).slice(0, 10)} 
         </p>
     </div>
-       
         <div > {/* body*/}
         <div >   
         <Link to={`../seller/${user._id}`}></Link>
         </div>  
-        
         <div class="cta-container transition">
         {existUser && sellerExists ? ( <Button variant="contained" color="error" size="medium" ><span onClick={() => handlerUnfollow(user)}>Dejar de seguir</span></Button>) : (<Button variant="contained" size="medium" color="success"><span key={user._id} onClick={handlerFollow}>Seguir</span></Button>)}
-        
-
         </div>
         
            <div class="card_circle transition"></div>
