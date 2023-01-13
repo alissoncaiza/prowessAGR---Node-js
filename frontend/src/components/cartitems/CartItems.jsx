@@ -1,4 +1,4 @@
-import { faEye, faMinusCircle, faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { faEye, faMinusCircle, faPlusCircle, faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useContext, useEffect } from 'react'
 import { useState } from 'react'
@@ -58,10 +58,11 @@ const CartItems = () => {
 
   return (
     <div className='cart-row'>
-      <h2 className="cart-title">Mi bolsa de compras</h2>
+      <div className='ctn-cart'>
+        <h2 className="cart-title">Mi bolsa de compras</h2>
       <div className="cart-items">
           <div className="cart-col">
-            {cartItems.length === 0 ? (<h3 className='info'>Tu bolsa está vacía!</h3>) : (
+            {cartItems.length === 0 ? (<h3 className='info-empty'>Tu bolsa está vacía!</h3>) : (
                 <div className="cart-cards">
                     {cartItems.map((item) => (
                         <div className="filter-card" key={item._id}>
@@ -70,9 +71,13 @@ const CartItems = () => {
                                 <Link to={`../seller/${item.sellerId}`}><img className='card-sellers' src={item.sellerImage} alt={item.sellerName} /></Link>
                             </div>
                             <div className="card-body">
-                                <Link to={`../${item.slug}`}>{item.name} <FontAwesomeIcon icon={faEye} /></Link>
-                                <span className='category'>{item.category}</span>
-                                <span className="price">${Number(item.price).toFixed(2)}/kg</span>
+                                <div className='view-product-page'>
+                                    <Link to={`../${item.slug}`}>{item.name} <FontAwesomeIcon icon={faEye} /></Link>
+                                </div>
+                                <div className='view-product-info'>
+                                    <span className='category'>{item.category}</span>
+                                    <span className="price">${Number(item.price).toFixed(2)}/kg</span>
+                                </div>
                             </div>
                             <div className="card-action">
                                 <button onClick={() => updateQuantityHandler(item, item.quantity - 1)} disabled={item.quantity === 1}><FontAwesomeIcon icon={faMinusCircle} /></button>
@@ -80,7 +85,7 @@ const CartItems = () => {
                                 <button onClick={() => updateQuantityHandler(item, item.quantity + 1)}><FontAwesomeIcon icon={faPlusCircle} /></button>
                             </div>
                             <div className="card-footer cart">
-                                <button onClick={() => removeProduct(item)}>Eliminar</button>
+                                <button onClick={() => removeProduct(item)}><FontAwesomeIcon icon={faTrashCan} /></button>
                             </div>
                         </div>
                     ))}
@@ -120,6 +125,7 @@ const CartItems = () => {
                 </div>
             </div>
           </div>
+      </div>
       </div>
       {openCheckout && <Checkout cartItems={cartItems} idSeller={idSeller} itemsPrice={itemsPrice} taxPrice={taxPrice} totalPrice={totalPrice} setOpenCheckout={setOpenCheckout} />}
     </div>

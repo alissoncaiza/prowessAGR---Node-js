@@ -1,9 +1,7 @@
-import { faEye } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Store } from '../../Store'
-import { Button} from '@mui/material';
+import Button from '@mui/material/Button';
 import "./Cards.css";
 
 const SellFilterInfo = ({user}) => {
@@ -53,6 +51,7 @@ const SellFilterInfo = ({user}) => {
     }
 
   return (
+    
     <div className="card">
     <div  key={user._id}>
     
@@ -72,9 +71,8 @@ const SellFilterInfo = ({user}) => {
         </div>
         
            <div class="card_circle transition"></div>
-        </div>
     </div>
-    
+    </div>
   )
 }
 

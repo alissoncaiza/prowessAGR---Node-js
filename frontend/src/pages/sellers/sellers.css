@@ -53,10 +53,17 @@
 .sell-fill-group {
     background-color: white;
     width: 250px;
+    background-color: rgb(200, 235, 203);
     transition: all 2s linear;
     border-top-right-radius: 50px;
-    box-shadow: 0 5px 10px black, 0 0 0 5px #080808eb;
-    color: #000000;
+    border: double 10px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.sell-fill-group:hover {
+    background-color: white;
+    transform-origin: right;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
 .sell-fill-group:hover {
@@ -128,11 +135,19 @@
 }
 
 
+
 .background-sellers {  
     background: -webkit-linear-gradient(90deg,  #5bcf8f 10%, #5bcf8f 90%); /* Chrome 10+, Saf5.1+ */
     background:    -moz-linear-gradient(90deg, #5bcf8f 10%, #5bcf8f 90%); /* FF3.6+ */
     background:     -ms-linear-gradient(90deg,  #5bcf8f 10%, #5bcf8f 90%); /* IE10 */
     background:      -o-linear-gradient(90deg,  #5bcf8f 10%, #5bcf8f 90%); /* Opera 11.10+ */
-    background:         linear-gradient(90deg,  #5bcf8f 10%, #5bcf8f 90%); /* W3C */ }
+    background:         linear-gradient(90deg,  #5bcf8f 10%, #5bcf8f 90%); /* W3C */ 
+}
 
-    .transition { transition: .3s cubic-bezier(.3, 0, 0, 1.3) }
+.transition { transition: .3s cubic-bezier(.3, 0, 0, 1.3) }
+
+
+
+
+
+

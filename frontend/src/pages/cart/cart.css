@@ -3,7 +3,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: auto;
+    padding: 100px 0;
+    background-color: #52C993;
+}
+
+.ctn-cart {
+    background-color: #68D0A1;
+    padding: 20px;
+    border-radius: 60px;
+    box-shadow: 12px 12px 15px -3px rgba(0, 0, 0, 0.1), -13px 10px 15px -3px rgba(0, 0, 0, 0.1);
 }
 
 .cart-title {
@@ -12,10 +21,23 @@
     color: #2f5f74;
 }
 
+h3.info-empty {
+    text-align: center;
+    padding: 20px 30px;
+    margin: 0 50px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 20px;
+    color: #ffffff;
+}
+
 .cart-items {
     margin: 40px 0;
     display: flex;
-    padding: 0 10px;
+    padding: 0 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .cart-col:first-child {
@@ -28,8 +50,13 @@
 
 .cart-cards {
     display: flex;
-    flex-wrap: wrap;
-    gap: 30px 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: 0 50px;
+    padding: 20px;
+    border-radius: 20px;
+    color: #ffffff;
 }
 
 .card-footer.cart {
@@ -39,19 +66,21 @@
 .card-footer.cart button {
     display: block;
     margin: 0 auto;
-    background-color: #f0f3bd;
-    padding: 5px 10px;
-    border: none;
-    box-shadow: 0 0 5px #f0f3bd;
-    color: #2f5f74;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    color: #ffffff;
     letter-spacing: 1.4px;
     text-transform: uppercase;
     transition: all 0.5s;
+    padding: 20px;
+    border-radius: 50%;
+    letter-spacing: 3px;
+    font-size: 20px;
 }
 
 .card-footer.cart button:hover {
-    background-color: #2f5f74;
-    color: #f0f3bd;
+    background-color: #ffffff;
+    color: #121212;
 }
 
 .card-action {
@@ -81,9 +110,12 @@
 }
 
 .cart-bill {
+    width: 100%;
     background-color: #ffffff;
     padding: 10px;
     border-radius: 5px;
+    padding: 50px 80px;
+    border-radius: 20px;
 }
 
 .bill-title {
@@ -97,11 +129,16 @@
     margin: 30px 0;
 }
 
+.bill-total {
+    width: 100%;
+}
+
 .bill-group {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px dashed #2f5f74;
-    padding: 5px 0;
+    padding: 10px 0;
 }
 
 .bill-btn {
@@ -112,13 +149,15 @@
     display: block;
     margin: 0 auto;
     background-color: #2f5f74;
-    padding: 5px 10px;
     border: none;
     box-shadow: 0 0 5px #2f5f74;
     color: #ffffff;
     letter-spacing: 1.4px;
     text-transform: uppercase;
     transition: all 0.5s;
+    padding: 10px 20px;
+    border-radius: 10px;
+    letter-spacing: 3px;
 }
 
 .bill-btn button:hover {
@@ -129,4 +168,38 @@
 .orderPay {
     text-align: center;
     margin-bottom: 20px;
+}
+
+/* Card prodcut */
+.filter-card {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.card-body {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-body a {
+    color: #ffffff;
+}
+
+.view-product-page,
+.view-product-info {
+    padding: 10px 0;
 }
