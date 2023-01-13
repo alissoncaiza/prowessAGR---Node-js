@@ -129,10 +129,10 @@
 
 
 .background-sellers {  
-    background: -webkit-linear-gradient(90deg, #edd576 10%, #79e1a8 90%); /* Chrome 10+, Saf5.1+ */
-    background:    -moz-linear-gradient(90deg, #edd576 10%, #79e1a8 90%); /* FF3.6+ */
-    background:     -ms-linear-gradient(90deg, #edd576 10%, #79e1a8 90%); /* IE10 */
-    background:      -o-linear-gradient(90deg, #edd576 10%, #79e1a8 90%); /* Opera 11.10+ */
-    background:         linear-gradient(90deg, #edd576 10%, #79e1a8 90%); /* W3C */ }
+    background: -webkit-linear-gradient(90deg,  #5bcf8f 10%, #5bcf8f 90%); /* Chrome 10+, Saf5.1+ */
+    background:    -moz-linear-gradient(90deg, #5bcf8f 10%, #5bcf8f 90%); /* FF3.6+ */
+    background:     -ms-linear-gradient(90deg,  #5bcf8f 10%, #5bcf8f 90%); /* IE10 */
+    background:      -o-linear-gradient(90deg,  #5bcf8f 10%, #5bcf8f 90%); /* Opera 11.10+ */
+    background:         linear-gradient(90deg,  #5bcf8f 10%, #5bcf8f 90%); /* W3C */ }
 
     .transition { transition: .3s cubic-bezier(.3, 0, 0, 1.3) }

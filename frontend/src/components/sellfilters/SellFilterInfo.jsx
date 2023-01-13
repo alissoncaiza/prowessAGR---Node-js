@@ -60,9 +60,9 @@ const SellFilterInfo = ({user}) => {
             <img href={user.image} alt={user.name} /></h2>
    
         <p> 
-        <span>
-           {existUser && sellerExists ? ( <Button variant="contained" color="error" size="medium"><span onClick={() => handlerUnfollow(user)}>Dejar de seguir</span></Button>) : (<Button variant="contained" size="medium" color="success"><span key={user._id} onClick={handlerFollow}>Seguir</span></Button>)}
-           </span>
+        
+        Miembro Desde: {(user.createdAt).slice(0, 10)}
+           
            
         </p>
     </div>
@@ -73,7 +73,8 @@ const SellFilterInfo = ({user}) => {
         </div>  
         
         <div class="cta-container transition">
-        <span >Miembro Desde: {(user.createdAt).slice(0, 10)}</span> 
+        {existUser && sellerExists ? ( <Button variant="contained" color="error" size="medium" ><span onClick={() => handlerUnfollow(user)}>Dejar de seguir</span></Button>) : (<Button variant="contained" size="medium" color="success"><span key={user._id} onClick={handlerFollow}>Seguir</span></Button>)}
+        
 
         </div>
         

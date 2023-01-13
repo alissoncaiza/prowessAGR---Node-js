@@ -30,6 +30,7 @@
     right: 0;
     top: 0;
     width: 300px;
+    place-items: center;
 }
 .card:hover {
     height: 450px; /*salen todos los datos*/
@@ -54,7 +55,7 @@
 .card:hover p { margin-top: 300px }
 .card_circle {
    
-    background-color: #edd576;
+    background-color:  #50b57d;
     background-size:cover;
     border-radius: 50%;
     height: 400px;
@@ -81,8 +82,9 @@ p {
     font-weight: normal;
     margin-top: 200px;
     position:absolute;
-    text-align: center;
+    text-align:center;
     z-index: 9999;
+    place-items: center;
 }
 .cta-container {
     font-family: 'Raleway', sans-serif;
