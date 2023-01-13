@@ -1,6 +1,5 @@
 
 #Buscador {
-<<<<<<< HEAD
 
         background: url(https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-19-32.png) no-repeat 0px 5px;
         background-size: 24px;
@@ -9,7 +8,6 @@
         border-bottom: solid 1px #ccc;
         padding: 10px 10px 10px 30px;
         outline: none;
-=======
     width: 700px;
     height: 50px;
     border: solid 2px;
@@ -102,5 +100,4 @@ p {
     text-align: center;
     width: 100%;
     z-index: 9999;
->>>>>>> f44f048af85f6b2d8ac78d8f20c8ff5b015e06cb
 }

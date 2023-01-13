@@ -1,5 +1,5 @@
 import Products from "../models/productModel.js";
-import { uploadImage, deleteImage } from "../utils/cloudinaryConfig.js";
+import { uploadImage, deleteImage, updateImage} from "../utils/cloudinaryConfig.js";
 import fs from "fs-extra";
 
 //CREATE PRODUCT
@@ -62,6 +62,13 @@ export const getProductBySellerId = async (req, res) => {
 export const updateProduct = async (req, res) => {
   try {
     const newProduct = req.body;
+    if (req.files?.image) {
+      const result = await updateImage(req.files.image.tempFilePath, req.body.image.public_id);
+      newProduct.image = {
+        public_id: result.public_id,
+        secure_url: result.secure_url,
+      };
+    }
     await Products.findOneAndUpdate({ _id: req.params.id }, newProduct, {
       new: true,
     });
