@@ -55,11 +55,10 @@ const SellFilterInfo = ({user}) => {
   return (
     <div className="card">
     <div  key={user._id}>
-        <div className="sell-fill-header">
+    
         <h2 className="transition">
             <img href={user.image} alt={user.name} /></h2>
-           
-        </div>
+   
         <p> 
         <span>
            {existUser && sellerExists ? ( <Button variant="contained" color="error" size="medium"><span onClick={() => handlerUnfollow(user)}>Dejar de seguir</span></Button>) : (<Button variant="contained" size="medium" color="success"><span key={user._id} onClick={handlerFollow}>Seguir</span></Button>)}

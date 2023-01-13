@@ -29,38 +29,38 @@
     position:relative;
     right: 0;
     top: 0;
-    width: 250px;
+    width: 300px;
 }
 .card:hover {
-    height: 650px; /*salen todos los datos*/
+    height: 450px; /*salen todos los datos*/
     width: 300px;
 }
 .card:hover .cta-container {
     display: inline;
-    margin-top: 480px;
+    margin-top: 380px;
 }
 .card:hover .card_circle {
     background-size:cover;
     border-radius: 0;
-    margin-top: -380px;
+    margin-top: -130px;
 }
 .card:hover h2 {
-    
-    color: #fff;
+    background: #3487f7;
+    color: #FFF;
     margin-top: 100px;
     padding: 5px;
 }
 .card:hover h2 small { color: rgb(71, 254, 144) }
 .card:hover p { margin-top: 300px }
 .card_circle {
-    
+   
     background-color: #edd576;
     background-size:cover;
     border-radius: 50%;
     height: 400px;
     margin-left: -75px;
     margin-top: -270px; /**/
-    position:relative;
+    position: absolute;
     width: 450px;
 }
 h2 {
@@ -69,7 +69,7 @@ h2 {
     font-size: 24px;
     font-weight: 200;
     margin-top: 150px;
-    position: relative;
+    position: absolute;
     text-align: center;
     width: 100%;
     z-index: 9999;
@@ -80,16 +80,47 @@ p {
     font-size: 100%;
     font-weight: normal;
     margin-top: 200px;
-    position:relative;
+    position:absolute;
     text-align: center;
     z-index: 9999;
 }
 .cta-container {
     font-family: 'Raleway', sans-serif;
-    display:flex;
+    display:none;
     margin-top: 320px;
     position: absolute;
     text-align: center;
     width: 100%;
     z-index: 9999;
+}
+.cta {
+    -moz-border-radius: 2px;
+    -moz-transition: 0.2s ease-out;
+    -ms-transition: 0.2s ease-out;
+    -o-transition: 0.2s ease-out;
+    -webkit-border-radius: 2px;
+    -webkit-transition: 0.2s ease-out;
+    background-clip: padding-box;
+    border: 2px solid #3487f7;
+    border-radius: 2px;
+    color: #3487f7;
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 17px;
+    font-weight: 400;
+    height: 36px;
+    letter-spacing: 0.5px;
+    line-height: 36px;
+    margin-bottom: 15px;
+    padding: 0 2rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: 0.2s ease-out;
+}
+.cta:hover {
+    background-color: #3487f7;
+    box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #fff;
+    -moz-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
