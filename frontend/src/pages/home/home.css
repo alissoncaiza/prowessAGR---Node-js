@@ -273,14 +273,13 @@ svg.rotating-slow {
 }
 
 .ctn-text-1 span {
-    font-family: 'Krona One', sans-serif;
     color: rgba(18, 18, 18, 1);
-    font-size: 55px;
+    font-size: 45px;
     margin: 20px 0 10px 0;
     letter-spacing: 5px;
     text-transform: capitalize;
     line-height: 1.35;
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .ctn-text-2 {
@@ -289,10 +288,10 @@ svg.rotating-slow {
 }
 
 .ctn-text-2 span {
-    font-family: 'Krona One', sans-serif;
     color: rgba(18, 18, 18, 1);
-    font-size: 31px;
+    font-size: 35px;
     text-align: center;
+    font-weight: 600;
 }
 
 span.text-percent {
@@ -308,10 +307,11 @@ span.text-percent {
     margin: 20px 0 0 0;
     transition: all .5s ease;
     border: 2px solid #121212;
-    font-family: 'Krona One', sans-serif;
     color: #62cf9d;
     font-size: 21px;
     transition: all .5s ease;
+    letter-spacing: 3px;
+    font-weight: 600;
 }
 
 .ctn-btn-buy span {
@@ -327,7 +327,6 @@ span.text-percent {
 }
 
 .ctn-btn-buy button {
-    font-family: 'Krona One', sans-serif;
     color: #121212;
     font-size: 21px;
     transition: all .5s ease;
@@ -600,7 +599,7 @@ span.text-percent {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url(../../../public/assets/images/others/layered-waves-haikei.svg);
+    /* background-image: url(../../../public/assets/images/others/layered-waves-haikei.svg); */
 }
 
 .container-footer .footer {
@@ -657,9 +656,9 @@ span.text-percent {
 }
 
 .title-social span {
-    font-family: 'Krona One', sans-serif;
     font-size: 24px;
     color: #121212;
+    font-weight: 600;
 }
 
 .container-footer .footer .redes-footer a {
@@ -704,8 +703,7 @@ span.text-percent {
 }
 
 .paginas a {
-    font-family: 'Krona One', sans-serif;
-    font-size: 14px;
+    font-size: 18px;
     margin: 10px 50px;
     color: #121212;
     transition: all .5s ease;
