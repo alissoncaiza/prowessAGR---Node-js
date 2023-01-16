@@ -83,7 +83,7 @@ const SellerInfo = () => {
       <div className="seller-col">
         <div className="seller-info">
             <div className="seller-header">
-                <img src={seller.image} alt={seller.name} />
+                <img src={seller.image.secure_url} alt={seller.name} />
             </div>
             <div className="seller-body">
                 <span>{seller.name}</span>

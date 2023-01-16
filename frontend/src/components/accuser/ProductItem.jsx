@@ -35,7 +35,7 @@ const ProductItem = ({pro}) => {
     <>
         <div className="filter-card" key={pro._id}>
             <div className="card-header">
-                <img src={pro.image} alt={pro.name} />
+                <img src={pro.image.secure_url} alt={pro.name} />
             </div>
             <div className="card-body">
                 <Link to={`../${pro.slug}`}>{pro.name} <FontAwesomeIcon icon={faEye} /></Link>

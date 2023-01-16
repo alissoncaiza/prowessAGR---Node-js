@@ -29,7 +29,8 @@ const AccountUser = () => {
     const [open, setOpen] = useState(false);
     const [openAdd, setOpenAdd] = useState(false);
 
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState([
+    ]);
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
@@ -122,7 +123,7 @@ const AccountUser = () => {
         const url = await uploadImage(image);
         console.log(url);
 
-        const {data} = await axios.put("/src/api/users/update", {
+        const {data} = await axios.put("/api/users/update", {
             _id: userInfo._id,
             image: url
         });

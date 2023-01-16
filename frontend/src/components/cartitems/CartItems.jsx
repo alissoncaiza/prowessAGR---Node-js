@@ -67,7 +67,7 @@ const CartItems = () => {
                     {cartItems.map((item) => (
                         <div className="filter-card" key={item._id}>
                             <div className="card-header">
-                                <img src={item.image} alt={item.name} />
+                                <img src={item.image.secure_url} alt={item.name} />
                                 <Link to={`../seller/${item.sellerId}`}><img className='card-sellers' src={item.sellerImage} alt={item.sellerName} /></Link>
                             </div>
                             <div className="card-body">

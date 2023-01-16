@@ -56,7 +56,7 @@ const SellFilterInfo = ({user}) => {
     <div  key={user._id}>
     
         <h2 className="transition">
-            <img href={user.image} alt={user.name} /></h2>
+            <img href={user.image.secure_url} alt={user.name} /></h2>
    
         <p> 
         Miembro Desde: {(user.createdAt).slice(0, 10)} 

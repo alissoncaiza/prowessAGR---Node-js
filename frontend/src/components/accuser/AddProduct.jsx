@@ -47,7 +47,7 @@ const AddProduct = ({ setOpenAdd }) => {
       formData.append("image", image);
       formData.append("sellerId", userInfo._id);
       formData.append("seller", userInfo.name);
-      formData.append("sellerImage", userInfo.image);
+      formData.append("sellerImage", userInfo.image.secure_url);
       const data = await axios.post("/api/products/add", formData, {
         headers: {
           "Content-Type": "multipart/form-data",

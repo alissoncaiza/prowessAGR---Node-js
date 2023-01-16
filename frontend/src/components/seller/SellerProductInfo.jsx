@@ -33,12 +33,13 @@ const SellerProductInfo = ({pro}) => {
   return (
     <div className="filter-card" key={pro._id}>
         <div className="card-header">
-            <img src={pro.image} alt={pro.name} />
+            <img src={pro.image.secure_url} alt={pro.name} />
         </div>
         <div className="card-body">
             <Link to={`../${pro.slug}`}>{pro.name} <FontAwesomeIcon icon={faEye} /></Link>
             <span className='category'>{pro.category}</span>
             <span className="price">${(pro.price).toFixed(2)}/kg</span>
+
         </div>
         <div className="card-footer">
             <button onClick={addToCart}>Añadir al carrito</button>
