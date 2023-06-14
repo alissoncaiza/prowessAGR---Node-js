@@ -35,8 +35,8 @@ const Filter = () => {
   const keys = ["name", "seller"];
 
   const search = () => {
-    return products.filter((item) =>
-      keys.some((key) => item[key].toLowerCase().includes(query))
+    return products.filter((item) =>    
+      keys.some((key) => item[key]?.toLowerCase().includes(query))
     );
   };
 
